@@ -1,10 +1,32 @@
 /* ====== General Styles ====== */
+/* === Theme Setup === */
+.app.light {
+  --bg-color: #f9fafb;
+  --text-color: #111;
+  --card-bg: #fff;
+  --accent-color: #0077ff;
+  --nav-gradient: linear-gradient(90deg, #0077ff, #00ffff);
+  --glow-color: rgba(0, 119, 255, 0.2);
+}
 
-body {
+.app.dark {
+  --bg-color: #0d0d0d;
+  --text-color: #f5f5f5;
+  --card-bg: #161b22;
+  --accent-color: #00ffff;
+  --nav-gradient: linear-gradient(90deg, #8a2be2, #00ffff);
+  --glow-color: rgba(255, 0, 255, 0.25);
+}
+
+body, .app {
   margin: 0;
   font-family: "Poppins", sans-serif;
-  background-color: #0d0d0d;
-  color: #f5f5f5;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background 0.4s ease, color 0.4s ease;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 a {
@@ -21,14 +43,29 @@ h1, h2, h3 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: linear-gradient(90deg, #8a2be2, #00ffff);
+  background: var(--nav-gradient);
   padding: 1rem 2rem;
   color: white;
+  box-shadow: 0 4px 15px var(--glow-color);
 }
 
-.logo {
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.nav-logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.logo-text {
   font-weight: 700;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
+  color: #fff;
 }
 
 .nav-links {
@@ -46,11 +83,63 @@ h1, h2, h3 {
   color: #ff00ff;
 }
 
+.theme-toggle {
+  background: var(--accent-color);
+  border: none;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.theme-toggle:hover {
+  opacity: 0.85;
+}
+
 /* ====== Hero Section ====== */
 .hero-section {
   text-align: center;
   padding: 4rem 2rem;
   background: radial-gradient(circle at top, #1a1a1a, #000);
+  flex: 1;
+}
+.carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.carousel-btn {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: #fff;
+  font-size: 1.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.carousel-btn:hover {
+  background: rgba(0, 255, 255, 0.4);
+}
+
+.hero-coin-card {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 1.5rem 2rem;
+  border-radius: 15px;
+  max-width: 350px;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.4);
+  color: white;
+}
+
+.hero-coin-card h2 {
+  font-size: 1.6rem;
+  color: #00ffff;
+  margin-bottom: 0.5rem;
 }
 
 .hero-title {
@@ -95,6 +184,7 @@ h1, h2, h3 {
 .coin-list {
   padding: 2rem;
   text-align: center;
+  flex: 1;
 }
 
 .coin-container {
@@ -105,16 +195,16 @@ h1, h2, h3 {
 }
 
 .coin-card {
-  background: #1c1c1c;
+  background: var(--card-bg);
   border-radius: 15px;
   padding: 1.5rem;
-  box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
+  box-shadow: 0 0 10px var(--glow-color);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .coin-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 0 20px rgba(255, 0, 255, 0.3);
+  box-shadow: 0 0 20px var(--accent-color);
 }
 
 /* ====== Add Coin Form ====== */
@@ -122,9 +212,9 @@ h1, h2, h3 {
   padding: 2rem;
   max-width: 500px;
   margin: 2rem auto;
-  background: #1a1a1a;
+  background: var(--card-bg);
   border-radius: 15px;
-  box-shadow: 0 0 10px rgba(138, 43, 226, 0.5);
+  box-shadow: 0 0 10px var(--glow-color);
   text-align: center;
 }
 
@@ -165,6 +255,7 @@ h1, h2, h3 {
   text-align: center;
   padding: 3rem 2rem;
   background: #0f0f0f;
+  flex: 1;
 }
 
 .about p {
@@ -189,23 +280,21 @@ h1, h2, h3 {
   z-index: 1000;
 }
 
+/* ====== Responsive ====== */
+@media (max-width: 768px) {
+  .nav-links {
+    gap: 1rem;
+  }
 
-.nav-left {
-  display: flex;
-  align-items: center;
-  gap: 0.7rem;
+  .hero-title {
+    font-size: 2.3rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .coin-container {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  }
 }
-
-.nav-logo {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  object-fit: cover;
-}
-
-.logo-text {
-  font-weight: 700;
-  font-size: 1.4rem;
-  color: #fff;
-}
-
