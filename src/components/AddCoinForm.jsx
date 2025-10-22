@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "./AddCoinForm.css";
 
 function AddCoinForm({ addCoin }) {
   const [formData, setFormData] = useState({

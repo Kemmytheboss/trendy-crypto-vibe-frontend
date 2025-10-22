@@ -1,7 +1,9 @@
 import React from "react";
-import "./HeroSection.css";
+import { useNavigate } from "react-router-dom";
 
-function HeroSection() {
+
+function Hero() {
+  const navigate = useNavigate();
   return (
     <section className="hero-section">
       <h1 className="hero-title">CryptoVibe 🚀</h1>
@@ -24,4 +26,4 @@ function HeroSection() {
   );
 }
 
-export default HeroSection;
+export default Hero;

@@ -1,5 +1,4 @@
 import React from "react";
-import "./CoinList.css";
 
 function CoinList({ coins }) {
   return (
