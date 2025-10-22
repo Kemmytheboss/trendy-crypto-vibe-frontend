@@ -29,7 +29,7 @@ function AddCoinForm({ addCoin }) {
 
   return (
     <div className="add-form">
-      <h2>Add a New Coin 💰</h2>
+      <h2>Add a New Coin</h2>
       <form onSubmit={handleSubmit}>
         <input
           type="text"

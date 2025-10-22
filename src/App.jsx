@@ -9,18 +9,20 @@ import Footer from "./components/Footer";
 import "./App.css";
 
 function App() {
-  const API_URL = "http://localhost:8001/coins"; // ✅ Backend link
+  const API_URL = "http://localhost:8001/coins";
   const [coins, setCoins] = useState([]);
 
-  // ✅ Fetch data from backend
-  useEffect(() => {
-    fetch(API_URL)
-      .then((res) => res.json())
-      .then(setCoins)
-      .catch((err) => console.error("Error fetching coins:", err));
-  }, []);
+  // Fetch data from backend
+ useEffect(() => {
+  fetch(API_URL)
+    .then((res) => res.json())
+    .then((data) => setCoins(data)) 
+    .catch((err) => console.error("Error fetching coins:", err));
+}, []);
 
-  // ✅ Add new coin to backend
+
+
+  //  Add new coin to backend
   function addCoin(newCoin) {
     fetch(API_URL, {
       method: "POST",

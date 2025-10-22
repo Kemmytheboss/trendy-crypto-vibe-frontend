@@ -1,183 +1,203 @@
-/* === Global Styles === */
-:root {
-  --bg-dark: #0f0f10;
-  --accent: #00ffcc;
-  --accent-light: #26ffd5;
-  --text-light: #ffffff;
-  --text-gray: #bfbfbf;
-  --card-bg: #18181a;
-  --danger: #ff4d4d;
-  --success: #4dff88;
-  --font-primary: 'Poppins', sans-serif;
-}
-
+/* ====== General Styles ====== */
 body {
-  background-color: var(--bg-dark);
-  color: var(--text-light);
-  font-family: var(--font-primary);
   margin: 0;
-  padding: 0;
+  font-family: "Poppins", sans-serif;
+  background-color: #0d0d0d;
+  color: #f5f5f5;
 }
 
-/* === NAVBAR === */
-nav {
-  background-color: var(--card-bg);
-  padding: 1rem 2rem;
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h1, h2, h3 {
+  margin: 0;
+}
+
+/* ====== Navbar ====== */
+.navbar {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  box-shadow: 0 2px 10px rgba(0, 255, 204, 0.15);
+  align-items: center;
+  background: linear-gradient(90deg, #8a2be2, #00ffff);
+  padding: 1rem 2rem;
+  color: white;
 }
 
-.nav-logo {
-  font-size: 1.6rem;
-  font-weight: bold;
-  color: var(--accent);
-  letter-spacing: 1px;
+.logo {
+  font-weight: 700;
+  font-size: 1.5rem;
 }
 
 .nav-links {
+  list-style: none;
   display: flex;
   gap: 2rem;
 }
 
 .nav-links a {
-  color: var(--text-light);
-  text-decoration: none;
   font-weight: 500;
-  transition: 0.3s;
+  transition: color 0.3s ease;
 }
 
 .nav-links a:hover {
-  color: var(--accent);
+  color: #ff00ff;
 }
 
-/* === HERO SECTION === */
-.hero {
+/* ====== Hero Section ====== */
+.hero-section {
   text-align: center;
-  padding: 6rem 2rem;
-  background: linear-gradient(180deg, #101011 0%, #0f0f10 100%);
+  padding: 4rem 2rem;
+  background: radial-gradient(circle at top, #1a1a1a, #000);
 }
 
-.hero h1 {
+.hero-title {
   font-size: 3rem;
-  font-weight: 700;
-  color: var(--accent);
+  font-weight: 800;
+  color: #00ffff;
 }
 
-.hero p {
+.hero-subtitle {
   font-size: 1.2rem;
-  color: var(--text-gray);
-  max-width: 600px;
-  margin: 1rem auto;
+  margin-top: 1rem;
+  color: #d3d3d3;
 }
 
-.hero button {
-  background-color: var(--accent);
-  border: none;
+.hero-message {
+  margin-top: 2rem;
+  font-size: 1.1rem;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 1.5rem;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+.hero-button {
+  margin-top: 2rem;
+  background: #00ffff;
   color: #000;
-  font-weight: bold;
-  padding: 0.8rem 1.6rem;
-  border-radius: 8px;
+  font-weight: 600;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 30px;
   cursor: pointer;
-  margin-top: 1.5rem;
-  transition: 0.3s;
+  transition: all 0.3s ease;
 }
 
-.hero button:hover {
-  background-color: var(--accent-light);
+.hero-button:hover {
+  background: #ff00ff;
+  color: #fff;
 }
 
-/* === CARD / COIN LIST === */
-.card-grid {
+/* ====== Coin List ====== */
+.coin-list {
+  padding: 2rem;
+  text-align: center;
+}
+
+.coin-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 1.5rem;
-  padding: 2rem;
+  margin-top: 2rem;
 }
 
-.card {
-  background-color: var(--card-bg);
-  border-radius: 16px;
+.coin-card {
+  background: #1c1c1c;
+  border-radius: 15px;
   padding: 1.5rem;
-  text-align: center;
-  box-shadow: 0 4px 20px rgba(0, 255, 204, 0.05);
-  transition: transform 0.3s ease;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.card:hover {
+.coin-card:hover {
   transform: translateY(-5px);
+  box-shadow: 0 0 20px rgba(255, 0, 255, 0.3);
 }
 
-.card img {
-  width: 60px;
-  margin-bottom: 1rem;
-}
-
-.card h3 {
-  color: var(--accent);
-}
-
-.card p {
-  color: var(--text-gray);
-}
-
-/* === FORM STYLING === */
-form {
-  background-color: var(--card-bg);
+/* ====== Add Coin Form ====== */
+.add-form {
   padding: 2rem;
-  border-radius: 12px;
-  margin: 2rem auto;
   max-width: 500px;
-  box-shadow: 0 2px 10px rgba(0, 255, 204, 0.1);
-}
-
-form input,
-form select,
-form textarea {
-  width: 100%;
-  padding: 0.8rem;
-  margin-bottom: 1rem;
-  border-radius: 8px;
-  border: 1px solid #333;
-  background-color: #1a1a1c;
-  color: var(--text-light);
-}
-
-form button {
-  width: 100%;
-  padding: 0.8rem;
-  border: none;
-  border-radius: 8px;
-  background-color: var(--accent);
-  font-weight: bold;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-form button:hover {
-  background-color: var(--accent-light);
-}
-
-/* === FOOTER === */
-footer {
+  margin: 2rem auto;
+  background: #1a1a1a;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(138, 43, 226, 0.5);
   text-align: center;
-  padding: 1rem;
-  background-color: var(--card-bg);
-  color: var(--text-gray);
-  font-size: 0.9rem;
 }
 
-/* === RESPONSIVE === */
-@media (max-width: 768px) {
-  .hero h1 {
-    font-size: 2.2rem;
-  }
-  .nav-links {
-    flex-direction: column;
-    gap: 1rem;
-  }
+.add-form h2 {
+  margin-bottom: 1rem;
 }
+
+.add-form input {
+  display: block;
+  width: 100%;
+  margin: 0.7rem 0;
+  padding: 0.8rem;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  background: #262626;
+  color: #fff;
+}
+
+.add-form button {
+  background: linear-gradient(90deg, #00ffff, #8a2be2);
+  border: none;
+  padding: 0.8rem 2rem;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: 600;
+  color: black;
+  transition: 0.3s ease;
+}
+
+.add-form button:hover {
+  transform: scale(1.05);
+  background: linear-gradient(90deg, #ff00ff, #00ffff);
+}
+
+/* ====== About Section ====== */
+.about {
+  text-align: center;
+  padding: 3rem 2rem;
+  background: #0f0f0f;
+}
+
+.about p {
+  color: #d3d3d3;
+  max-width: 700px;
+  margin: 1rem auto;
+  line-height: 1.7;
+}
+
+/* ====== Footer ====== */
+.footer {
+  text-align: center;
+  padding: 1.5rem;
+  background: #111;
+  font-size: 0.9rem;
+  color: #888;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.nav-logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.logo-text {
+  font-weight: 700;
+  font-size: 1.4rem;
+  color: #fff;
+}
+
