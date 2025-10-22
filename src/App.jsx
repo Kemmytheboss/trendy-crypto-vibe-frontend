@@ -11,6 +11,8 @@ import "./App.css";
 function App() {
   const API_URL = "http://localhost:8001/coins";
   const [coins, setCoins] = useState([]);
+  const [theme, setTheme] = useState("light");
+
 
   // Fetch data from backend
  useEffect(() => {
@@ -33,18 +35,24 @@ function App() {
       .then((data) => setCoins([...coins, data]))
       .catch((err) => console.error("Error adding coin:", err));
   }
+  
+  // Toggle theme function
+  const toggleTheme = () =>
+    setTheme((prev) => (prev === "light" ? "dark" : "light"));
 
   return (
-    <Router>
-      <NavBar />
-      <Routes>
-        <Route path="/" element={<Hero />} />
-        <Route path="/coins" element={<CoinList  coins={coins} />} />
-        <Route path="/add" element={<AddCoinForm addCoin={addCoin} />} />
-        <Route path="/about" element={<About />} />
-      </Routes>
-      <Footer />
-    </Router>
+    <div className={`app ${theme}`} >
+      <Router>
+        <NavBar toggleTheme={toggleTheme} theme={theme}/>
+        <Routes>
+          <Route path="/" element={<Hero />} />
+          <Route path="/coins" element={<CoinList  coins={coins} />} />
+          <Route path="/add" element={<AddCoinForm addCoin={addCoin} />} />
+          <Route path="/about" element={<About />} />
+        </Routes>
+        <Footer />
+      </Router>
+    </div>
   );
 }
 
