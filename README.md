@@ -1,70 +1,106 @@
-# Getting Started with Create React App
+TrendyCryptoVibe
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+TrendyCryptoVibe is a neon cyberpunk-inspired single page React application for crypto enthusiasts. It combines live market data, portfolio tracking, social buzz, and bite-sized learning resources in one visually appealing dashboard.
 
-## Available Scripts
+MVP Summary
 
-In the project directory, you can run:
+As a user of TrendyCryptoVibe, I can:
 
-### `npm start`
+View live market coins with real-time prices, 24h changes, and predictions.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Add coins to my portfolio manually or directly from the CoinList.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Track portfolio performance including total value, P/L, and profit/loss percentages.
 
-### `npm test`
+Browse top posts from Reddit’s r/cryptocurrency and share them easily.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Learn crypto basics through concise cards in the Learn Hub.
 
-### `npm run build`
+Toggle between dark and light themes for a customized UI.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Navigate seamlessly across sections (Home, Coins, Portfolio, Learn, About) with a responsive navbar and footer.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Features
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Live Dashboard: Shows trending coins with 7-day price charts.
 
-### `npm run eject`
+Coin List: Searchable table of top USDT pairs from Binance with add-to-portfolio functionality.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Portfolio Management: Fetches current prices and calculates P/L dynamically.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Add Coin Form: Controlled form to manually add coins to portfolio.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Social Feed: Carousel of top Reddit posts with share buttons.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Learn Hub: Cards with quick crypto learning topics.
 
-## Learn More
+Responsive Layout: Works on desktop and mobile devices.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Dark/Light Theme Toggle: Switch between themes with a single click.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Tech Stack
 
-### Code Splitting
+Frontend: React, React Router, Recharts
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Backend: json-server (for portfolio REST API)
 
-### Analyzing the Bundle Size
+Styling: CSS with neon cyberpunk theme (linear gradients, glassmorphism, shadows)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Data Sources: Binance API, Reddit API
 
-### Making a Progressive Web App
+Installation & Setup
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Clone the repository:
 
-### Advanced Configuration
+git clone https://github.com/yourusername/trendycryptovibe-frontend.git
+git clone https://github.com/yourusername/trendycryptovibe-backend.git
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
+Backend Setup (json-server):
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+cd trendycryptovibe-backend
+npm install -g json-server
+json-server --watch db.json --port 8001
 
-### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Frontend Setup:
+
+cd trendycryptovibe-frontend
+npm install
+npm start
+
+
+App will run at http://localhost:3000.
+
+Folder Structure
+trendycryptovibe-frontend/
+├─ public/
+├─ src/
+│  ├─ assets/           # Images, GIFs
+│  ├─ components/       # React components (NavBar, Hero, Portfolio, etc.)
+│  ├─ App.jsx
+│  ├─ App.css
+│  └─ index.js
+
+trendycryptovibe-backend/
+├─ db.json               # Initial portfolio data
+
+Screenshots
+
+You can include 2–3 screenshots of the app here to showcase UI.
+
+Future Enhancements
+
+Integration with more exchanges (CoinGecko, CoinMarketCap).
+
+User authentication and multi-user portfolios.
+
+Advanced charting with candlesticks and indicators.
+
+Mobile-specific optimizations and hamburger menu.
+
+Deploy backend to Render and frontend to Netlify for public access.
+
+License
+
+MIT License © [Verah Mokaya]
