@@ -3,7 +3,7 @@ import React from "react";
 function CoinList({ coins }) {
   return (
     <div className="coin-list">
-      <h2>Trending Coins 💹</h2>
+      <h2>Trending Coins</h2>
       <div className="coin-container">
         {coins.map((coin) => (
           <div key={coin.id} className="coin-card">

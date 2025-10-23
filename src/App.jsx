@@ -12,14 +12,14 @@ import "./App.css";
 function App() {
   const API_URL = "http://localhost:8001/coins";
   const [coins, setCoins] = useState([]);
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState("dark");
 
 
   // Fetch data from backend
  useEffect(() => {
   fetch(API_URL)
     .then((res) => res.json())
-    .then((data) => setCoins(data)) 
+    .then((data) => setCoins(data.coin || data)) 
     .catch((err) => console.error("Error fetching coins:", err));
 }, []);
 

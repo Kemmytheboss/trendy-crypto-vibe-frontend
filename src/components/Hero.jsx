@@ -1,8 +1,11 @@
 import React from "react";
 import LiveDashboard from "./LiveDashboard";
+import { useNavigate } from "react-router-dom";
 
 
 function Hero() {
+  const navigate = useNavigate();
+
   return (
     <section className="hero-section">
       <h1 className="hero-title">TrendyCryptoVibe</h1>
@@ -12,10 +15,10 @@ function Hero() {
         the future of digital money.
         Hey there, trailblazer. <br />
         Ready to ride the crypto wave? <br />
-        Dive in, learn, invest, and vibe your way to financial freedom 🌊💰
+        Dive in, learn, invest, and vibe your way to financial freedom.
       </p>
       
-      <button className="hero-button">Explore Coins</button>
+      <button className="hero-button" onClick={() => navigate("/coins")}>Explore Coins</button>
 
       <LiveDashboard />
     </section>

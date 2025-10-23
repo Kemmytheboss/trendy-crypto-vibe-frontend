@@ -75,7 +75,7 @@ function LiveDashboard() {
   useEffect(() => {
     const timer = setInterval(() => {
       setIndex((prev) => (prev + 1) % trending.length);
-    }, 10000);
+    }, 5000);
     return () => clearInterval(timer);
   }, [trending]);
 
