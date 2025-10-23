@@ -2,12 +2,12 @@ import React from "react";
 
 function About() {
   return (
-    <section className="about">
-      <h2>About CryptoVibe </h2>
+    <section className="card">
+      <h2>About TrendyCryptoVibe </h2>
       <p>
-        CryptoVibe is your Gen Z hub for all things crypto — combining trending
-        market data, viral news, and social buzz into one smooth experience.
-        Learn, invest, and vibe with the future of digital money 💸🚀
+         TrendyCryptoVibe is your neon cyberpunk dashboard for the crypto curious:
+        live market data from Binance, portfolio tracking via a local json-server,
+        social buzz, and short learning bites to level up your crypto knowledge.
       </p>
     </section>
   );
