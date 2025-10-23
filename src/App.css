@@ -132,31 +132,77 @@ main { padding: 20px 28px; max-width: 1200px; margin: 0 auto; }
 @media (max-width: 680px) {
   .add-form form { grid-template-columns: 1fr; }
 }
-
 /* ---------- PORTFOLIO ---------- */
-.portfolio-grid { 
-  display:flex; 
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap:12px; 
-  padding:6px 0; }
+.portfolio-card {
+  margin-bottom: 16px;
+  padding: 16px;
+}
 
-.portfolio-grid .card {
-   padding: 12px; 
-   transition: transform .18s ease; }
+.portfolio-summary {
+  margin-bottom: 16px;
+  font-size: 1rem;
+  font-weight: 600;
+}
 
-.portfolio-grid .card:hover { 
-  transform: translateY(-6px); 
-  box-shadow: 0 16px 40px rgba(0,0,0,0.6); }
+/* Total P/L highlight */
+.app.dark .portfolio-total.pl-positive {
+  color: #00ff99;
+  text-shadow: 0 0 12px rgba(0,255,153,0.6);
+}
 
-/* portfolio values highlight */
-.portfolio-value { 
-  font-size: 1.05rem; 
-  font-weight:700; 
-  color: var(--neon-a); }
+.app.dark .portfolio-total.pl-negative {
+  color: #ff6b6b;
+  text-shadow: 0 0 12px rgba(255,107,107,0.6);
+}
 
-.portfolio-pl { 
-  font-weight:700; 
-  margin-left:10px; }
+.app.light .portfolio-total.pl-positive {
+  color: #006600;
+  background: rgba(0,122,0,0.1);
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+
+.app.light .portfolio-total.pl-negative {
+  color: #990000;
+  background: rgba(198,0,0,0.1);
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+
+.portfolio-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.portfolio-item {
+  flex: 1 1 220px;
+  padding: 12px;
+  transition: transform 0.18s ease;
+}
+
+.portfolio-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.6);
+}
+
+/* Individual P/L */
+.portfolio-pl.pl-positive {
+  color: #00ff99;
+}
+
+.portfolio-pl.pl-negative {
+  color: #ff6b6b;
+}
+
+/* Light mode overrides */
+.app.light .portfolio-pl.pl-positive {
+  color: #006600;
+}
+
+.app.light .portfolio-pl.pl-negative {
+  color: #990000;
+}
 
 /* ---------- SOCIAL FEED ---------- */
 .social-feed-carousel { display:block; }

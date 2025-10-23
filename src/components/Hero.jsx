@@ -9,7 +9,7 @@ function Hero() {
     <section className="hero-section">
       <div>
         <h1 className="hero-title">TrendyCryptoVibe</h1>
-        <p className="hero-subtitle">Vibe with the Future of Crypto</p>
+        <p className="hero-subtitle">          Vibe with the Future of Crypto — live prices, portfolio insights, social buzz, and crypto tips.</p>
         <img src={heroGIF} alt="Crypto Vibe" className="hero-gif" />
       </div>
 

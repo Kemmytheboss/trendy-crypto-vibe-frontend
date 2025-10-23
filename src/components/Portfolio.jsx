@@ -4,6 +4,8 @@ import React, { useEffect, useState } from "react";
  * Portfolio component:
  * - Receives initial portfolio from App (from json-server)
  * - For each item, fetches current price from Binance and calculates current value and P/L
+ * - Calculates value, P/L, and P/L percentage
+ * - Adapts colors for dark/light theme
  */
 
 function Portfolio({ portfolio }) {
