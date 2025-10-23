@@ -9,15 +9,11 @@ function Hero() {
       <p className="hero-subtitle">
         Your Gen Z gateway to trending crypto news, real-time coin updates, and
         the future of digital money.
-      </p>
-
-      <div className="hero-message">
-        <p>
-          Hey there, trailblazer. <br />
+         Hey there, trailblazer. <br />
           Ready to ride the crypto wave? <br />
           Dive in, learn, invest, and vibe your way to financial freedom 🌊💰
-        </p>
-      </div>
+      </p>
+
 
       <button className="hero-button">Explore Coins</button>
     </section>

@@ -45,7 +45,7 @@ function App() {
       <Router>
         <NavBar toggleTheme={toggleTheme} theme={theme}/>
         <Routes>
-          <Route path="/" element={<Hero />} />
+          <Route path="/" element={<Hero coins={coins} />}/>
           <Route path="/coins" element={<CoinList  coins={coins} />} />
           <Route path="/add" element={<AddCoinForm addCoin={addCoin} />} />
           <Route path="/about" element={<About />} />
