@@ -94,7 +94,7 @@ main { padding: 20px 28px; max-width: 1200px; margin: 0 auto; }
 
 .hero-title {
   font-size: 2.4rem;
-  text-shadow: 0 0 18px var(--neon-b); 
+  text-shadow: 0 0 2px var(--neon-b); 
   color: var(--neon-b);
   margin: 0;
 }
@@ -350,6 +350,5 @@ button:focus, a:focus, input:focus { outline: 2px dashed rgba(0,255,255,0.14); o
 
 /* Neon glow on hover for buttons & links */
 .btn:hover, .btn.primary:hover, .nav-links a:hover, .theme-toggle:hover {
-  text-shadow: 0 0 12px var(--neon-a), 0 0 18px var(--neon-b);
   transform: translateY(-2px);
 }
