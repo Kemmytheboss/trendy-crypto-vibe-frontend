@@ -14,7 +14,7 @@ function Footer() {
 
   return (
     <footer className="footer">
-      <p>© {new Date().getFullYear()} CryptoVibe. All rights reserved.</p>
+      <p>© {new Date().getFullYear()} TrendyCryptoVibe. All rights reserved.</p>
       
       <div className="social-links">
         {socialLinks.map((s, i) => (
