@@ -19,7 +19,7 @@ function NavBar({ onToggleTheme, theme}) {
       </ul>
 
       <button className="theme-toggle" onClick={onToggleTheme}>
-        {theme === "dark" ? "Light Mode" : "DArm Mode"}
+        {theme === "dark" ? "Light" : "Dark"}
       </button>
     </nav>
   );
