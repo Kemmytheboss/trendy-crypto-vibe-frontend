@@ -20,23 +20,24 @@ function LiveDashboard({compact = false}) {
   const [loading, setLoading]  =    useState(true);
 
   // Fetch trending coins
-  async function fetchTrending() {
+  async function loadKLines(sym = symbol) {
+    setLoading(true);
     try {
-      const res = await fetch("https://api.coingecko.com/api/v3/search/trending");
+      const res = await fetch(`https://api.binance.com/api/v3/klines?symbol=${sym}&interval=1d&limit=14`);
       const data = await res.json();
-      setTrending(
-        data.coins.map((item) => ({
-          id: item.item.id,
-          name: item.item.name,
-          symbol: item.item.symbol.toUpperCase(),
-          thumb: item.item.thumb,
-          rank: item.item.market_cap_rank,
-        }))
-      );
-    } catch (err) {
-      console.error("Error fetching trending coins:", err);
-    }
-  }
+      
+      const mapped = data.map((d) => ({
+        time: new Date(d[0]).toLocaleDateString("en-US", { month: "short", day: "numeric" }),
+        price: parseFloat(d[4]),
+      }));
+        setChartData(mapped);
+        } catch (err) {
+            console.error("Klines error", err);
+            setChartData([]);
+            } finally {
+            setLoading(false);
+            }
+        }
 
   // Fetch 7-day price data for each trending coin
   async function fetchCoinPrices(coinId) {
