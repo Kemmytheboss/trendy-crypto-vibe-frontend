@@ -1,47 +1,65 @@
-import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Routes, Route } from "react-router-dom";
 import NavBar from "./components/NavBar";
 import Hero from "./components/Hero";
 import CoinList from "./components/CoinList";
 import AddCoinForm from "./components/AddCoinForm";
+import Portfolio from "./components/Portfolio";
+import LearnHub from "./components/LearnHub";
 import About from "./components/About";
 import Footer from "./components/Footer";
-import "./App.css";
 
 function App() {
-  const [theme, setTheme] = useState("light");
-  const [coins, setCoins] = useState([]);
+  const [theme, setTheme] = useState("dark");
+  const [portfolio, setPortfolio] = useState([]);
 
-  // Fetch coins from JSON-server
+  // Load portfolio from json-server
   useEffect(() => {
-    fetch("http://localhost:8001/coins")
-      .then(res => res.json())
-      .then(data => setCoins(data))
-      .catch(err => console.error("Error fetching coins:", err));
+    fetch("http://localhost:8001/portfolio")
+      .then((r) => r.json())
+      .then((data) => setPortfolio(data))
+      .catch((err) => console.error("Portfolio fetch error:", err));
   }, []);
 
-  // Add new coin (POST response updates state)
-  function addCoin(newCoin) {
-    setCoins([...coins, newCoin]);
+  // Add new portfolio item (called after successful POST)
+  function addPortfolioItem(item) {
+    setPortfolio((prev) => [...prev, item]);
   }
 
-  // Toggle theme
+  // Toggle theme (passed to NavBar)
   function toggleTheme() {
-    setTheme(prev => (prev === "light" ? "dark" : "light"));
+    setTheme((t) => (t === "dark" ? "light" : "dark"));
   }
 
   return (
     <div className={`app ${theme}`}>
-      <Router>
-        <NavBar onToggleTheme={toggleTheme} theme={theme} />
+      <NavBar onToggleTheme={toggleTheme} theme={theme} />
+      <main>
         <Routes>
-          <Route path="/" element={<Hero />} />
-          <Route path="/coins" element={<CoinList coins={coins} />} />
-          <Route path="/add" element={<AddCoinForm addCoin={addCoin} />} />
+          <Route
+            path="/"
+            element={
+              <>
+                <Hero />
+                <Portfolio portfolio={portfolio} />
+                <LearnHub />
+              </>
+            }
+          />
+          <Route
+            path="/coins"
+            element={<CoinList addPortfolioItem={addPortfolioItem} />}
+          />
+          <Route
+            path="/add"
+            element={<AddCoinForm addPortfolioItem={addPortfolioItem} />}
+          />
+          <Route path="/portfolio" element={<Portfolio portfolio={portfolio} />} />
+          <Route path="/learn" element={<LearnHub />} />
           <Route path="/about" element={<About />} />
         </Routes>
-        <Footer />
-      </Router>
+      </main>
+      <Footer />
     </div>
   );
 }
