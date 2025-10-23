@@ -6,6 +6,7 @@ import CoinList from "./components/CoinList";
 import AddCoinForm from "./components/AddCoinForm";
 import About from "./components/About";
 import Footer from "./components/Footer";
+import LiveDashboard from "./components/LiveDashboard";
 import "./App.css";
 
 function App() {
@@ -49,7 +50,9 @@ function App() {
           <Route path="/coins" element={<CoinList  coins={coins} />} />
           <Route path="/add" element={<AddCoinForm addCoin={addCoin} />} />
           <Route path="/about" element={<About />} />
+          <Route path="/trending" element={<LiveDashboard />} />
         </Routes>
+        
         <Footer />
       </Router>
     </div>
