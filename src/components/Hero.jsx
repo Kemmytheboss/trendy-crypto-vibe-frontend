@@ -1,6 +1,7 @@
 import React from "react";
 import LiveDashboard from "./LiveDashboard";
 import { useNavigate } from "react-router-dom";
+import SocialFeed from "./SocialFeed";
 
 
 function Hero() {
@@ -21,6 +22,7 @@ function Hero() {
       <button className="hero-button" onClick={() => navigate("/coins")}>Explore Coins</button>
 
       <LiveDashboard />
+      <SocialFeed />
     </section>
   );
 }
