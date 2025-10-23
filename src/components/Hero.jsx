@@ -14,11 +14,10 @@ function Hero() {
         Ready to ride the crypto wave? <br />
         Dive in, learn, invest, and vibe your way to financial freedom 🌊💰
       </p>
+      
+      <button className="hero-button">Explore Coins</button>
 
       <LiveDashboard />
-
-
-      <button className="hero-button">Explore Coins</button>
     </section>
   );
 }
