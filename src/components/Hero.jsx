@@ -13,15 +13,13 @@ function Hero() {
 
       <p className="hero-subtitle">
         Your gateway to trending crypto news, real-time coin updates, and
-        the future of digital money.
-        Hey there, trailblazer. <br />
-        Ready to ride the crypto wave? <br />
+        the future of digital money. <br />
         Dive in, learn, invest, and vibe your way to financial freedom.
       </p>
       
       <button className="hero-button" onClick={() => navigate("/coins")}>Explore Coins</button>
-      <SocialFeed />
       <LiveDashboard />
+      <SocialFeed />
     </section>
   );
 }

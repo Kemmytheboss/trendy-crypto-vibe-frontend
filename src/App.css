@@ -439,3 +439,113 @@ h1, h2, h3 {
 .carousel-controls button:hover {
   opacity: 0.8;
 }
+/* ===== Hero Section ===== */
+.hero-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(135deg, #0d1117, #1a1a1a);
+  padding: 3rem 1rem;
+  min-height: 100vh;
+}
+
+.hero-content {
+  text-align: center;
+  max-width: 900px;
+  margin-bottom: 3rem;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 900;
+  color: #00ffff;
+  margin-bottom: 1rem;
+}
+
+.hero-subtitle {
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+  color: #d3d3d3;
+}
+
+.hero-message {
+  font-size: 1.1rem;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 1.5rem;
+  border-radius: 15px;
+  margin-bottom: 2rem;
+}
+
+.hero-button {
+  background: linear-gradient(90deg, #00ffff, #8a2be2);
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 30px;
+  font-weight: bold;
+  color: #000;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.hero-button:hover {
+  transform: scale(1.05);
+  background: linear-gradient(90deg, #ff00ff, #00ffff);
+  color: #fff;
+}
+
+/* ===== Dashboard Wrapper ===== */
+.dashboard-wrapper {
+  width: 100%;
+  padding: 2rem 0;
+  background: #111;
+  display: flex;
+  justify-content: center;
+}
+
+/* ===== Social Feed Wrapper ===== */
+.social-wrapper {
+  width: 100%;
+  padding: 2rem 0;
+  display: flex;
+  justify-content: center;
+}
+
+/* Make sure LiveDashboard & SocialFeed have max-width */
+.live-dashboard, .social-feed-carousel {
+  max-width: 1200px;
+  width: 95%;
+
+  .hero-section {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  padding: 3rem 1rem;
+  color: #fff;
+  overflow: hidden;
+}
+
+/* Hero Background GIF */
+.hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('/assets/crypto-hero.gif') no-repeat center center;
+  background-size: cover;
+  opacity: 0.3;
+  z-index: 0;
+}
+
+/* Content Overlay Above GIF */
+.hero-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  max-width: 900px;
+  margin-bottom: 3rem;
+}
+
+}
