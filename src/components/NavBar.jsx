@@ -18,6 +18,22 @@ function NavBar({ onToggleTheme, theme}) {
         <li><Link to="/about">About</Link></li>
         <li><Link to="/add">Add Coin</Link></li>
 
+        <li>
+            <a href="https://www.binance.com" target="_blank" rel="noopener noreferrer">
+            Binance
+          </a>
+        </li>
+        <li>
+          <a href="https://www.reddit.com/r/cryptocurrency/" target="_blank" rel="noopener noreferrer">
+            Reddit
+          </a>
+        </li>
+        <li>
+          <a href="https://coinmarketcap.com" target="_blank" rel="noopener noreferrer">
+            CMC
+          </a>
+        </li>
+
       </ul>
         <div className="flex">
         
