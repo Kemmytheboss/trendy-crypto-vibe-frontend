@@ -8,11 +8,16 @@ import {
   ResponsiveContainer,
 } from "recharts";
 
-function LiveDashboard() {
-  const [trending, setTrending] = useState([]);
-  const [priceData, setPriceData] = useState({});
-  const [loading, setLoading] = useState(true);
-  const [index, setIndex] = useState(0);
+/**
+ * LiveDashboard:
+ * - When compact prop is passed, shows a quick small chart for BTCUSDT (7 days)
+ * - Otherwise, shows a bigger interactive chart and rotates through top trending symbols
+ */
+
+function LiveDashboard({compact = false}) {
+  const [symbol, setSymbol] = useState("BTCUSDT");
+  const [chartData, setChartData] = useState([]);
+  const [loading, setLoading]  =    useState(true);
 
   // Fetch trending coins
   async function fetchTrending() {
