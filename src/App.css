@@ -354,3 +354,35 @@ h1, h2, h3 {
 .social-links a:hover {
   color: #ff00ff;
 }
+.social-feed {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1rem;
+  background: var(--card-bg);
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
+  color: var(--text-color);
+}
+
+.social-feed h3 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.social-feed ul {
+  list-style: none;
+  padding: 0;
+}
+
+.social-feed li {
+  margin: 0.7rem 0;
+}
+
+.social-feed a {
+  color: var(--accent-color);
+  text-decoration: none;
+}
+
+.social-feed a:hover {
+  text-decoration: underline;
+}
