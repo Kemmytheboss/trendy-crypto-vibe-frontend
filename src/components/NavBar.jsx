@@ -1,12 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import logo from "../assets/cryptovibe logo.png"; //
+import logo from "../assets/logo.png"; //
 
 function NavBar({ onToggleTheme, theme}) {
   return (
     <nav className="navbar">
         <div className="nav-left">
-            <img src={logo} alt="CryptoVibe Logo" className="nav-logo" />
+            <img src={logo} alt="TrendyCryptoVibe Logo" className="nav-logo" />
             <h2 className="logo-text">TrendyCryptoVibe</h2>
         </div>
 
