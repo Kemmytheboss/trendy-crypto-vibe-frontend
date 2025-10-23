@@ -1,8 +1,7 @@
 import React from "react";
 import LiveDashboard from "./LiveDashboard";
 import SocialFeed from "./SocialFeed";
-import heroGIF from "../assets/crypto.gif"; //
-
+import heroGIF from "../assets/bit.gif"; 
 
 function Hero() {
 

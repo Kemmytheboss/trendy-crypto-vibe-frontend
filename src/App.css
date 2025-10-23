@@ -216,3 +216,22 @@ button:focus, a:focus, input:focus { outline: 2px dashed rgba(0,255,255,0.14); o
 /* ---------- Small print: fallback colors for light theme ---------- */
 .app.light .nav-links a:hover { color: var(--neon-b); }
 .app.light .logo-text { color: #100b2a; }
+/* Fix card/light theme */
+.app.light .card {
+  background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.03));
+  border: 1px solid rgba(0,0,0,0.08);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+}
+
+/* Fix navbar/light theme */
+.app.light .navbar {
+  background: linear-gradient(90deg, rgba(255,255,255,0.15), rgba(255,255,255,0.05));
+  color: #101020;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+/* Neon glow on hover for buttons & links */
+.btn:hover, .btn.primary:hover, .nav-links a:hover, .theme-toggle:hover {
+  text-shadow: 0 0 12px var(--neon-a), 0 0 18px var(--neon-b);
+  transform: translateY(-2px);
+}
