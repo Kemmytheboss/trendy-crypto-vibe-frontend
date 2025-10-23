@@ -20,9 +20,8 @@ function Hero() {
       </p>
       
       <button className="hero-button" onClick={() => navigate("/coins")}>Explore Coins</button>
-
-      <LiveDashboard />
       <SocialFeed />
+      <LiveDashboard />
     </section>
   );
 }
